@@ -1,12 +1,11 @@
-environment: {}
 parameters: {}
 packages:
-  - name: sample
+  - name: fb
     environment: {}
     parameters: {}
     annotations: {}
     functions:
-      - name: hello
+      - name: pull
         binary: false
         main: ''
         runtime: 'nodejs:default'
@@ -15,3 +14,12 @@ packages:
         environment: {}
         annotations: {}
         limits: {}
+environment:
+  FB_GRAPH_URL: ${FB_GRAPH_URL}
+  FB_GRAPH_URL_RATING: ${FB_GRAPH_URL_RATING}
+  FB_GRAPH_URL_PUBLISHED_POSTS: ${FB_GRAPH_URL_PUBLISHED_POSTS}
+  FB_PAGE_ID: ${FB_PAGE_ID}
+  FB_PAGE_ACCESS_TOKEN: ${FB_PAGE_ACCESS_TOKEN}
+  MONGO_URL: ${MONGO_URL}
+  MONGO_PORT: ${MONGO_PORT}
+  MONGO_DB: ${MONGO_DB}

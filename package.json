@@ -4,8 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && rm -rf packages/fb/pull/*.d.ts packages/fb/pull/*.tsbuildinfo packages/fb/pull/*.js.map",
+    "deploy": "doctl serverless deploy .",
+    "invoke": "doctl serverless functions invoke fb/pull",
+    "logs": "doctl serverless activations logs --limit 3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@hoagiesonmain/shared-be": "^1.0.11",
+    "axios": "^0.27.2",
+    "mongoose": "^6.5.2",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.6"
+  }
 }
